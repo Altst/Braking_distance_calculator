@@ -19,6 +19,7 @@ export class StopWayCalcComponent {
     }
     else{
       console.log("Invalid Data!")
+      alert('Invalid data!')
     }
   }
 }
