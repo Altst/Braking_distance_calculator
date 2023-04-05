@@ -10,8 +10,15 @@ export class StopWayCalcComponent {
   weight: string = '';
   res: number = 0;
   Calc(){
-    
-    var metrSec:number = parseInt(this.killometrs)*1000/3600;
-    this.res =  Math.round(Number((metrSec^2/(2*0.7*9.81)) + (metrSec * (metrSec / (2 * 0.7 * 9.81 * (1500 / parseInt(this.weight)))))));
+    if(Number.isInteger(Number(this.killometrs)) && 
+      Number.isInteger(Number(this.weight)) &&
+      this.killometrs && this.weight)
+    {
+      var metrSec:number = parseInt(this.killometrs)*1000/3600;
+      this.res =  Math.round(Number((metrSec^2/(2*0.7*9.81)) + (metrSec * (metrSec / (2 * 0.7 * 9.81 * (1500 / parseInt(this.weight)))))));
+    }
+    else{
+      console.log("Invalid Data!")
+    }
   }
 }

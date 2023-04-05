@@ -4,7 +4,8 @@
             <span class="input-group-text">V<sub>0</sub></span>
             <input
               [(ngModel)]="killometrs"
-              type="text"
+              type="number"
+              min="0"
               class="form-control"
               placeholder="Начальная скорость"
               aria-label="Начальная скорость"
@@ -16,7 +17,8 @@
             <span class="input-group-text">M</span>
             <input
               [(ngModel)]="weight"  
-              type="text"
+              type="number"
+              min="0"
               class="form-control"
               placeholder="Вес машины"
               aria-label="Вес машины"
