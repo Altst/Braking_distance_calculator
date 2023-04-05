@@ -39,30 +39,65 @@
   <div>
     Состояние дороги
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        {{roadConditionsString}}
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {{ roadConditionsString }}
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" (click)="optionRoad1()" href="#">Cухой асфальт</a></li>
-        <li><a class="dropdown-item" (click)="optionRoad2()" href="#">Мокрый асфальт</a></li>
-        <li><a class="dropdown-item" (click)="optionRoad3()" href="#">Покрытый снегом асфальт</a></li>
-        <li><a class="dropdown-item" (click)="optionRoad4()" href="#">Покрытый льдом асфальтт</a></li>
+        <li>
+          <a class="dropdown-item" (click)="optionRoad1()" href="#"
+            >Cухой асфальт</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="optionRoad2()" href="#"
+            >Мокрый асфальт</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="optionRoad3()" href="#"
+            >Покрытый снегом асфальт</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="optionRoad4()" href="#"
+            >Покрытый льдом асфальтт</a
+          >
+        </li>
       </ul>
     </div>
   </div>
   <div>
     Тип привода тормозов
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        {{brakingTypeString}}
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {{ brakingTypeString }}
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" (click)="optionBreaking1()" href="#">Пневматический</a></li>
-        <li><a class="dropdown-item" (click)="optionBreaking2()" href="#">Гидравлический</a></li>
+        <li>
+          <a class="dropdown-item" (click)="optionBreaking1()" href="#"
+            >Пневматический</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="optionBreaking2()" href="#"
+            >Гидравлический</a
+          >
+        </li>
       </ul>
     </div>
-
   </div>
-  <button (click)="result()" type="button" class="btn btn-primary">Расчитать</button>
-  <div>Result: {{finalResult}}</div>
+  <button (click)="result()" type="button" class="btn btn-primary">
+    Расчитать
+  </button>
+  <div>Result: {{ finalResult }}</div>
 </div>
