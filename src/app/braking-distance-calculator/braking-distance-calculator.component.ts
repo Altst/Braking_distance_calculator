@@ -13,9 +13,9 @@ export class BrakingDistanceCalculatorComponent {
   slope: string = '';
   movement: number = 0;
   roadConditionsString: string = 'Cухой асфальт';
-  roadConditions: number = 0;
+  roadConditions: number = 0.7;
   brakingTypeString: string = 'Пневматический';
-  breakingType: number = 0;
+  breakingType: number = 0.4;
   shp: number = 0;
   shr: number = 0;
   sbrl: number = 0;
@@ -63,15 +63,27 @@ export class BrakingDistanceCalculatorComponent {
   }
 
   result(){
-    this.shp = parseInt(this.killometrs) * parseInt(this.perceptionTime);
-    this.shr = parseInt(this.killometrs) * parseInt(this.reactionTime);
-    this.sbrl = parseInt(this.killometrs) * this.breakingType;
-    this.sbr = (parseInt(this.killometrs) * parseInt(this.killometrs)) / (2 * this.roadConditions * 9.8)
-    if(Number.isNaN(this.shp + this.shr + this.sbrl + this.sbr)){
+    if(parseInt(this.killometrs) && parseInt(this.perceptionTime) && parseInt(this.reactionTime) < 0){
       alert("Error")
-      this.finalResult = 0;
-    }else{
-      this.finalResult = this.shp + this.shr + this.sbrl + this.sbr;
     }
+    else{
+      this.shp = parseInt(this.killometrs) * parseInt(this.perceptionTime);
+      this.shr = parseInt(this.killometrs) * parseInt(this.reactionTime);
+      this.sbrl = parseInt(this.killometrs) * this.breakingType;
+      this.sbr = (parseInt(this.killometrs) * parseInt(this.killometrs)) / (2 * this.roadConditions * 9.8)
+      if(Number.isNaN(this.shp + this.shr + this.sbrl + this.sbr)){
+        alert("Error")
+        this.finalResult = 0;
+      }else{
+        if(this.shp + this.shr + this.sbrl + this.sbr < 0){
+          alert("Error")
+          this.finalResult = 0;
+        }
+        else{
+          this.finalResult = this.shp + this.shr + this.sbrl + this.sbr;
+        }
+      }
+    }
+    
   }
 }
