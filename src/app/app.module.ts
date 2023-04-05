@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
 import { TimerComponent } from './timer/timer.component';
 import { BrakingDistanceCalculatorComponent } from './braking-distance-calculator/braking-distance-calculator.component';
+import { StopWayCalcComponent } from './stop-way-calc/stop-way-calc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNewComponentComponent,
     TimerComponent,
-    BrakingDistanceCalculatorComponent
+    BrakingDistanceCalculatorComponent,
+    StopWayCalcComponent
   ],
   imports: [
     BrowserModule,
