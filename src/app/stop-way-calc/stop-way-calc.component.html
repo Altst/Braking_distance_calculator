@@ -1,16 +1,35 @@
 <div class="app">
     <div class="Calc">
-        <div class="way">
-            <label>Speed car on start of stop way</label>
-            <input id="km"  type="number" [(ngModel)]="km">
+        <div class="input-group mb-3">
+            <span class="input-group-text">V<sub>0</sub></span>
+            <input
+              [(ngModel)]="killometrs"
+              type="text"
+              class="form-control"
+              placeholder="Начальная скорость"
+              aria-label="Начальная скорость"
+              aria-describedby="basic-addon2"
+            />
+            <span class="input-group-text" id="basic-addon2">km/h</span>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">M</span>
+            <input
+              [(ngModel)]="weight"  
+              type="text"
+              class="form-control"
+              placeholder="Вес машины"
+              aria-label="Вес машины"
+              aria-describedby="basic-addon2"
+            />
+            <span class="input-group-text" id="basic-addon2">kg</span>
+          </div>
+          <button (click)="Calc()" type="button" class="btn btn-primary">
+            Расчитать
+          </button>
+        <div class="Res">   
+            <h5 id="res">Result:{{res}}</h5>
         </div>
-        <div class="car-info">
-            <label>Weight car in kg</label>
-            <input id="weight" type="number" [(ngModel)]="weight">
-        </div>
-        <button (click) = "Calc()" class="btn">Calc</button>
-        <div class="Res">
-            <h2 id="res">{{res}}</h2>
-        </div>
+        
     </div>  
    </div>
