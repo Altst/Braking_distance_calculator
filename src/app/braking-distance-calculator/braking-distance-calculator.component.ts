@@ -63,7 +63,7 @@ export class BrakingDistanceCalculatorComponent {
   }
 
   result(){
-    if(parseInt(this.killometrs) && parseInt(this.perceptionTime) && parseInt(this.reactionTime) < 0){
+    if(parseInt(this.killometrs) || parseInt(this.perceptionTime) || parseInt(this.reactionTime) < 0){
       alert("Error")
     }
     else{
