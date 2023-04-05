@@ -67,6 +67,11 @@ export class BrakingDistanceCalculatorComponent {
     this.shr = parseInt(this.killometrs) * parseInt(this.reactionTime);
     this.sbrl = parseInt(this.killometrs) * this.breakingType;
     this.sbr = (parseInt(this.killometrs) * parseInt(this.killometrs)) / (2 * this.roadConditions * 9.8)
-    this.finalResult = this.shp + this.shr + this.sbrl + this.sbr;
+    if(Number.isNaN(this.shp + this.shr + this.sbrl + this.sbr)){
+      alert("Error")
+      this.finalResult = 0;
+    }else{
+      this.finalResult = this.shp + this.shr + this.sbrl + this.sbr;
+    }
   }
 }
